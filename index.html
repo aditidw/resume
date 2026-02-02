@@ -12,7 +12,10 @@
   <link href="assets/img/AD-logos.jpeg" rel="icon">
   <link href="assets/img/AD-logos.jpeg" rel="apple-touch-icon">
 
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -23,10 +26,12 @@
 
 <body>
 
-  <header class="site-header">
+  <a class="skip-link" href="#top">Skip to main content</a>
+
+  <header class="site-header" role="banner">
     <div class="container d-flex align-items-center justify-content-between">
       <a class="brand" href="#top">Aditi Dwivedi</a>
-      <nav class="nav-links d-none d-md-flex">
+      <nav class="nav-links d-none d-md-flex" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#resume">Experience</a>
         <a href="#skills">Skills</a>
@@ -36,7 +41,7 @@
       </nav>
       <div class="cta-group d-none d-md-flex">
         <a class="btn ghost" href="#contact">Contact</a>
-        <a class="btn primary" href="forms/ADITI__DWIVEDI_-_Software_Developer - Resume.pdf" download>Download CV</a>
+        <a class="btn primary" href="forms/ADITI__DWIVEDI.pdf" download>Download CV</a>
       </div>
       <button class="menu-toggle d-md-none" aria-label="Toggle navigation">
         <i class="bx bx-menu"></i>
@@ -49,7 +54,7 @@
       <a href="#portfolio">Work</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <a class="btn primary w-100 text-center mt-3" href="forms/ADITI__DWIVEDI_-_Software_Developer - Resume.pdf" download>Download CV</a>
+      <a class="btn primary w-100 text-center mt-3" href="forms/ADITI__DWIVEDI.pdf" download>Download CV</a>
     </div>
   </header>
 
@@ -75,17 +80,17 @@
           </div>
           <div class="col-lg-5" data-aos="fade-left">
             <div class="hero-card">
-              <img src="assets/img/profile-img-1.jpg" alt="Aditi Dwivedi portrait" class="img-fluid">
+              <img src="assets/img/profile-img-1.jpg" alt="Aditi Dwivedi portrait" class="img-fluid" loading="eager">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header">
-          <h2>About</h2>
+          <h2 id="about-heading">About</h2>
           <p>Frontend specialist partnering with product, design, and platform teams to deliver performant experiences.</p>
         </div>
         <div class="row g-4">
@@ -111,19 +116,23 @@
       </div>
     </section>
 
-    <section id="resume" class="section">
+    <section id="resume" class="section" aria-labelledby="resume-heading">
       <div class="container">
         <div class="section-header">
-          <h2>Experience</h2>
+          <h2 id="resume-heading">Experience</h2>
           <p>Recent roles and impact.</p>
         </div>
-        <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="card surface">
-              <div class="card-meta">
-                <span class="role">Software Engineer</span>
-                <span class="org">Just Eat Takeaway</span>
-                <span class="time">Aug 2023 – Present · London</span>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot current"></div>
+            <div class="card surface exp-card current">
+              <div class="exp-header">
+                <div class="exp-icon"><i class="bx bx-briefcase"></i></div>
+                <div class="card-meta">
+                  <span class="role">Software Engineer</span>
+                  <span class="org">Just Eat Takeaway</span>
+                </div>
+                <span class="time-badge current">Aug 2023 – Present · London</span>
               </div>
               <ul>
                 <li>Led frontend within a Next.js 14 monorepo using React 18 and Redux-Saga to ship modular features across regions.</li>
@@ -135,12 +144,16 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
-            <div class="card surface">
-              <div class="card-meta">
-                <span class="role">Front-End Software Developer</span>
-                <span class="org">Sagittarius Pvt Ltd</span>
-                <span class="time">Nov 2021 – Aug 2023 · London</span>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="card surface exp-card">
+              <div class="exp-header">
+                <div class="exp-icon"><i class="bx bx-briefcase"></i></div>
+                <div class="card-meta">
+                  <span class="role">Front-End Software Developer</span>
+                  <span class="org">Sagittarius Pvt Ltd</span>
+                </div>
+                <span class="time-badge">Nov 2021 – Aug 2023 · London</span>
               </div>
               <ul>
                 <li>Delivered responsive Sitecore MVC + React interfaces for Air Arabia, McCarthy Stone.</li>
@@ -150,12 +163,16 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card surface">
-              <div class="card-meta">
-                <span class="role">Freelance Frontend Software Developer</span>
-                <span class="org">Independent</span>
-                <span class="time">Apr 2020 – Oct 2021 · Dublin</span>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="card surface exp-card">
+              <div class="exp-header">
+                <div class="exp-icon"><i class="bx bx-briefcase"></i></div>
+                <div class="card-meta">
+                  <span class="role">Freelance Frontend Software Developer</span>
+                  <span class="org">Independent</span>
+                </div>
+                <span class="time-badge">Apr 2020 – Oct 2021 · Dublin</span>
               </div>
               <ul>
                 <li>Built and launched Highbernate, a guided meditation app (React Native).</li>
@@ -164,12 +181,16 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="card surface">
-              <div class="card-meta">
-                <span class="role">Software Developer</span>
-                <span class="org">NuageBiz Tech Pvt Ltd</span>
-                <span class="time">Jan 2018 – Apr 2020 · New Delhi</span>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="card surface exp-card">
+              <div class="exp-header">
+                <div class="exp-icon"><i class="bx bx-briefcase"></i></div>
+                <div class="card-meta">
+                  <span class="role">Software Developer</span>
+                  <span class="org">NuageBiz Tech Pvt Ltd</span>
+                </div>
+                <span class="time-badge">Jan 2018 – Apr 2020 · New Delhi</span>
               </div>
               <ul>
                 <li>Built and deployed cross-platform mobile apps (Flutter) and responsive web UIs.</li>
@@ -177,32 +198,34 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="row g-4 mt-3">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="card surface">
-              <div class="card-meta">
-                <span class="role">Education</span>
-                <span class="org">NIIT University, India</span>
-                <span class="time">2014 – 2018</span>
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot edu"></div>
+            <div class="card surface exp-card edu">
+              <div class="exp-header">
+                <div class="exp-icon edu"><i class="bx bx-book-open"></i></div>
+                <div class="card-meta">
+                  <span class="role">Education</span>
+                  <span class="org">NIIT University, India</span>
+                </div>
+                <span class="time-badge">2014 – 2018</span>
               </div>
-              <p>Bachelor of Technology in Computer Science (Big Data concentration).</p>
+              <p>Bachelor of Technology in Computer Science.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-header">
-          <h2>Skills</h2>
+          <h2 id="skills-heading">Skills</h2>
           <p>Tools and platforms I use to ship reliable products.</p>
         </div>
         <div class="row g-4">
           <div class="col-lg-6" data-aos="fade-up">
             <div class="card surface">
-              <h4>Frontend</h4>
+              <h3>Frontend</h3>
               <div class="chip-row">
                 <span class="chip">React</span>
                 <span class="chip">Next.js</span>
@@ -217,7 +240,7 @@
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
             <div class="card surface">
-              <h4>Platforms</h4>
+              <h3>Platforms</h3>
               <div class="chip-row">
                 <span class="chip">Next.js 14</span>
                 <span class="chip">Redux-Saga</span>
@@ -230,7 +253,7 @@
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card surface">
-              <h4>Tooling</h4>
+              <h3>Tooling</h3>
               <div class="chip-row">
                 <span class="chip">Git</span>
                 <span class="chip">ESLint/Prettier</span>
@@ -244,7 +267,7 @@
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
             <div class="card surface">
-              <h4>Data</h4>
+              <h3>Data</h3>
               <div class="chip-row">
                 <span class="chip">SQL</span>
                 <span class="chip">MongoDB</span>
@@ -257,23 +280,23 @@
       </div>
     </section>
 
-    <section id="portfolio" class="section">
+    <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
       <div class="container">
         <div class="section-header">
-          <h2>Work</h2>
+          <h2 id="portfolio-heading">Work</h2>
           <p>Selected projects coming soon.</p>
         </div>
         <div class="card surface text-center" data-aos="fade-up">
-          <img src="assets/img/error.png" alt="Work placeholder" class="img-fluid placeholder-img">
+          <img src="assets/img/error.jpg" alt="Work placeholder" class="img-fluid placeholder-img" loading="lazy">
           <p class="mt-3 mb-0 text-muted">Project case studies will be added shortly.</p>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="section">
+    <section id="testimonials" class="section" aria-labelledby="testimonials-heading">
       <div class="container">
         <div class="section-header">
-          <h2>Testimonials</h2>
+          <h2 id="testimonials-heading">Testimonials</h2>
           <p>Notes from people I’ve worked with.</p>
         </div>
         <div class="row g-4">
@@ -281,7 +304,7 @@
             <div class="card surface testimonial-card">
               <p>“Aditi is a fast learner who quickly turns client requirements into polished apps. She’s open to new tech and a great team member.”</p>
               <div class="testimonial-meta">
-                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH1UVPspj-KRA/profile-displayphoto-shrink_800_800/0?e=1610582400&v=beta&t=u4COQ18Gsgpv4tZFUck1MRUEj_ZqD0yTlfqEFmzUwkk" alt="Piyush Rakhecha">
+                <img src="assets/img/testimonials/Piyush_Rakhecha.jpeg" alt="Piyush Rakhecha" loading="lazy">
                 <div>
                   <div class="name">Piyush Rakhecha</div>
                   <div class="title">CEO, NuageBiz Tech Pvt Ltd</div>
@@ -293,7 +316,7 @@
             <div class="card surface testimonial-card">
               <p>“Aditi adapts communication to any audience and owns delivery end to end. I’d definitely recommend her for engineering roles.”</p>
               <div class="testimonial-meta">
-                <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF26-dCRwqLqQ/profile-displayphoto-shrink_800_800/0?e=1610582400&v=beta&t=Jw7BvLffu58k0zPdfCHG8yvt_4CGLClzmV7easz5Nzo" alt="Sachin Rathi">
+                <img src="assets/img/testimonials/Sachin_Rathi.jpeg" alt="Sachin Rathi" loading="lazy">
                 <div>
                   <div class="name">Sachin Rathi</div>
                   <div class="title">Team Lead, NuageBiz Tech Pvt Ltd</div>
@@ -305,10 +328,10 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
-          <h2>Get in Touch</h2>
+          <h2 id="contact-heading">Get in Touch</h2>
           <p>Whether you have a question or a project, I’d love to hear from you.</p>
         </div>
         <div class="row g-4">
@@ -358,7 +381,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container d-flex justify-content-between flex-wrap">
       <span>© 2026 Aditi Dwivedi</span>
       <span>Designed &amp; built by Aditi Dwivedi</span>
